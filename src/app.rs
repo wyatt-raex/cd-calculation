@@ -158,7 +158,7 @@ impl Case {
   }
 
   pub fn print_accounts(&self) {
-    println!("Account # | Weeks Until Renewal | Interest Per Month | Balance"); 
+    println!("\nAccount # | Weeks Until Renewal | Interest Per Month | Balance"); 
     let mut index: u32 = 1;
     for account in &self.accounts {
       let mut str_index = String::from("         ");
@@ -183,6 +183,12 @@ impl Case {
       
       index += 1;
     }
+
+    println!(
+      "\nTotal Interest Per Period: ${:.2}\nTotal Case Balance: ${:.2}",
+      self.monthly_interest_accumulated,
+      self.total_saved,
+    );
   }
 }
 
